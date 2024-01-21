@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import TodoApp from "./TodoApp";
 
 function App() {
   return <TodoApp />;
