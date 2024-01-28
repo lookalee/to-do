@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import TodoList from "./TodoList";
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import AppBar from '@mui/material/AppBar';
@@ -7,6 +8,12 @@ import Grid from '@mui/material/Grid';
 
 
 function TodoApp() {
+    const initialTodos = [
+        { id: 1, task: "Clean Fishtank", completed: false },
+        { id: 2, task: "Wash Car", completed: true },
+        { id: 3, task: "Grow Beard", completed: false}
+    ];
+    const [todos, setTodos] = useState(initialTodos);
     return (
         <Paper 
             style={{
@@ -22,6 +29,7 @@ function TodoApp() {
                     <Typography color='inherit'>TODOS WITH HOOKS</Typography>
                 </Toolbar>
             </AppBar>
+            <TodoList todos={todos}/>
         </Paper>
 
     );
@@ -36,3 +44,5 @@ export default TodoApp;
   - TodoList
     - TodoItem
 */
+
+// each To-Do will have an id, task, completed (true,false)
